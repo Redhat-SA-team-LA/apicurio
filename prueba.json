@@ -9,7 +9,45 @@
     "/products": {
       "get": {
         "summary": "GetProduct",
-        "description": "Get a Product by ID"
+        "description": "Get a Product by ID",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "productID",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "Product": {
+        "required": [
+          "productID",
+          "ProductName"
+        ],
+        "properties": {
+          "productID": {
+            "type": "integer"
+          },
+          "ProductName": {
+            "type": "string"
+          },
+          "productPrice": {
+            "type": "number"
+          }
+        }
       }
     }
   }

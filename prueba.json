@@ -22,6 +22,19 @@
           }
         }
       },
+      "put": {
+        "summary": "UpdateProduct",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Product"
+              }
+            }
+          },
+          "required": true
+        }
+      },
       "parameters": [
         {
           "name": "productID",
